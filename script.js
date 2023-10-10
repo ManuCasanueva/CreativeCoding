@@ -1,4 +1,3 @@
-//setup
 const canvas = document.getElementById("canvas1")
 const ctx = canvas.getContext("2d")
 canvas.width = window.innerWidth;
@@ -32,7 +31,7 @@ class Particle {
         context.beginPath();
         context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         context.fill()
-       
+
     }
     update(){
         if (this.effect.mouse.pressed){
@@ -62,7 +61,7 @@ class Particle {
             this.y = this.effect.height - this.radius
             this.vy *= -1
          }
-      
+
 
     }
     reset(){
@@ -96,9 +95,9 @@ class Effect {
             if (this.mouse.pressed){
                 this.mouse.x = e.x
                 this.mouse.y = e.y
-               
+
             }
-        
+
         })
         window.addEventListener("mousedown", e =>{
             this.mouse.pressed =true;
@@ -113,7 +112,7 @@ class Effect {
     createParticles(){
         for (let i = 0; i < this.numberOfParticles; i++) {
            this.particles.push(new Particle(this));
-            
+
         }
     }
     handleParticles(context){
@@ -141,7 +140,7 @@ class Effect {
                     context.restore()
                 }
             }
-        
+
        } 
     }
     resize(width,height){
