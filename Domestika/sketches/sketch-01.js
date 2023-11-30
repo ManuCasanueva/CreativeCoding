@@ -6,9 +6,10 @@ const settings = {
 
 const sketch = () => {
   return ({ context, width, height }) => {
-    context.fillStyle = "white";
+    context.fillStyle = "#fffff";
     context.fillRect(0, 0, width, height);
-    context.lineWidth = width * 0.01;
+    context.lineWidth = width * 0.001;
+    context.strokeStyle = (Math.random() * 256)
 
 
     let w = width * 0.10;
@@ -23,6 +24,8 @@ const sketch = () => {
       for (let j = 0; j < 5; j++) {
         let x = ix + (w + gap) * i;
         let y = iy + (h + gap) * j;
+
+         context.strokeStyle = "yellow";
 
         context.beginPath();
         context.rect(x, y, w, h);
@@ -39,3 +42,4 @@ const sketch = () => {
 };
 
 canvasSketch(sketch, settings);
+
