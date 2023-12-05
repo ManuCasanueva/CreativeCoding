@@ -3,7 +3,7 @@ const random = require("canvas-sketch-util/random");
 const math = require("canvas-sketch-util/math");
 
 const settings = {
-  dimensions: [1080, 1080],
+  dimensions: [1080, 2400],
   animate: true,
 };
 
@@ -22,8 +22,9 @@ class Vector {
 class Agent {
   constructor(x, y) {
     this.pos = new Vector(x, y);
-    this.vel = new Vector(random.range(-0.5, 0.5), random.range(-0.5, 0.5));
-    this.radius = random.range(7, 15);
+    this.vel = new Vector(random.range(-1, 1), random.range(-1, 1)); // Valores de velocidad mayores para un movimiento más rápido
+
+    this.radius = random.range(10, 25);
   }
 
   update() {
@@ -42,10 +43,14 @@ class Agent {
 
     // Crear un degradado radial para simular luz
     const gradient = context.createRadialGradient(0, 0, 0, 0, 0, this.radius);
-    gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
-    gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+gradient.addColorStop(0, 'rgba(0, 128, 128, 1)'); // Cyan oscuro
+// Cyan intermedio
+gradient.addColorStop(1, 'rgba(0, 255, 255, 1)'); // Cyan claro
 
-    context.fillStyle = gradient;
+context.fillStyle = gradient;
+
+
+
     context.beginPath();
     context.arc(0, 0, this.radius, 0, Math.PI * 2);
     context.fill();
@@ -57,7 +62,7 @@ class Agent {
 const sketch = ({ context, width, height }) => {
   const agents = [];
 
-  for (let i = 0; i < 60; i++) {
+  for (let i = 0; i < 100; i++) {
     const x = random.range(0, width);
     const y = random.range(0, height);
 
@@ -81,7 +86,8 @@ const sketch = ({ context, width, height }) => {
         const opacity = math.mapRange(dist, 0, 200, 1, 0); // Opacidad basada en la distancia
         const lineWidth = math.mapRange(dist, 0, 200, 5, 1); // Grosor de línea basado en la distancia
 
-        context.strokeStyle = `rgba(255, 0, 0, ${opacity})`; // Línea roja con opacidad variable
+        context.strokeStyle = `rgba(0, 0, 255, ${opacity})`;
+ // Línea roja con opacidad variable
         context.lineWidth = lineWidth;
         context.beginPath();
         context.moveTo(agent.pos.x, agent.pos.y);
@@ -97,3 +103,4 @@ const sketch = ({ context, width, height }) => {
 };
 
 canvasSketch(sketch, settings);
+
