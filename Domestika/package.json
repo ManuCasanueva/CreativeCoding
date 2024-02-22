@@ -1,0 +1,44 @@
+{
+  "name": "sketches",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sketch-01.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "array-almost-equal": "^1.0.0",
+    "bezier-easing": "^2.1.0",
+    "camera-project": "^1.0.2",
+    "canvas-sketch": "^0.7.7",
+    "canvas-sketch-util": "^1.10.0",
+    "ccapture.js": "^1.1.0",
+    "colormap": "^2.3.2",
+    "convex-hull": "^1.0.3",
+    "defined": "^1.0.1",
+    "eases": "^1.0.8",
+    "euclidean-distance": "^1.0.0",
+    "gl-matrix": "^3.4.3",
+    "glslify": "^7.1.1",
+    "lineclip": "^1.1.5",
+    "nice-color-palettes": "^3.0.0",
+    "p5": "^1.9.0",
+    "parse-color": "^1.0.0",
+    "perspective-camera": "^2.0.1",
+    "point-in-triangle": "^1.0.1",
+    "primitive-quad": "^2.0.0",
+    "regl": "^2.1.0",
+    "riso-colors": "^1.0.1",
+    "triangle-centroid": "^1.0.0",
+    "tweakpane": "^3.1.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.5",
+    "@babel/preset-env": "^7.23.5",
+    "three": "^0.147.0"
+  }
+}

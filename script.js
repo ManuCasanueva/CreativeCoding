@@ -4,9 +4,9 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const gradient = ctx.createLinearGradient(0,0,canvas.width,canvas.height)
-gradient.addColorStop(0, "red")
-gradient.addColorStop(0.5, "gold")
-gradient.addColorStop(1, "orangered")
+gradient.addColorStop(0, "blue")
+gradient.addColorStop(0.5, "magenta")
+gradient.addColorStop(1, "purple")
 ctx.fillStyle=gradient;
 ctx.strokeStyle = "white"
 
@@ -149,9 +149,9 @@ class Effect {
         this.width = width;
         this.height = height;
         const gradient = ctx.createLinearGradient(0,0,width,height)
-        gradient.addColorStop(0, "red")
-        gradient.addColorStop(0.5, "gold")
-        gradient.addColorStop(1, "orangered")
+        gradient.addColorStop(0, "blue")
+gradient.addColorStop(0.5, "magenta")
+gradient.addColorStop(1, "purple")
         this.context.fillStyle=gradient;
         this.context.strokeStyle = "black"
         this.particles.forEach(particle =>{
